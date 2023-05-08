@@ -24,4 +24,6 @@ public class JsonParserGoogleNews {
 	public static JsonParserGoogleNews parse(String json) {
 		return (JsonParserGoogleNews) System.JSON.deserialize(json, JsonParserGoogleNews.class);
 	}
+    
+
 }
