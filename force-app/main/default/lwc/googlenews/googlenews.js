@@ -5,6 +5,7 @@ export default class Googlenews extends LightningElement {
 
     @track dataList = [];
     @track value = 'business';
+   
     
     get options() {
         return [

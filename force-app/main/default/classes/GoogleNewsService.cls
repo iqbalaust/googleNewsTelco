@@ -4,7 +4,7 @@ public with sharing class GoogleNewsService {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
        
-        request.setEndpoint('https://newsapi.org/v2/top-headlines?country=my&category='+category+'&apiKey=cb4c853b9b01467d947cac92538bc410');
+        request.setEndpoint('https://newsapi.org/v2/top-headlines?country=us&category='+category+'&apiKey=cb4c853b9b01467d947cac92538bc410');
        
         request.setMethod('GET');
        // request.

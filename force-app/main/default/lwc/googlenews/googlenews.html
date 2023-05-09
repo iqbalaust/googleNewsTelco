@@ -1,8 +1,8 @@
 <template>
-<div style="background-color: aliceblue;">  
+<div style="">  
 <div style="display: flex;">
-    <div style="flex: 3; text-align: center; padding-top: 25px; font-size:  30px; color: brown; 
-    font-weight: bold; text-shadow: 1cm;"> Top news in Malaysia</div>
+    <div style="flex: 3; text-align: center; padding-top: 25px; font-size:  25px; color: brown; 
+    font-weight: bold; text-shadow: 1cm;"></div>
  <div class="slds-box" style="text-align: right;flex:1">
     <lightning-combobox
             name="category"
@@ -15,40 +15,52 @@
 </div>
 
 <template if:true={dataList}>
-  <div class = "slds-scrollable_y" style="height:200px;">
+  <div class = "slds-scrollable_y" style="height:400px;">
   <template for:each={dataList} for:item="data">
-    <div class="slds-box" key={data.title} style="margin: 10px;">
+    <div class="slds-box" key={data.title} style="margin: 10px; border-color: black;">
         <table>
             <tbody>
-                <tr>
-                    <td>
-                        <p style="font-size: 18px; padding-bottom: 10px;">{data.title}</p>
-                    </td>
-                </tr>
-               
-                <tr>
-                    <td>
-                        <p><em>{data.author}</em></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <em><lightning-formatted-date-time value={data.publishedAt} year= "numeric"  month="short" day="2-digit" weekday="short" hour="numeric" minute="2-digit" hour12="false"></lightning-formatted-date-time></em>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <p style="line-height: 1.5; padding-top:10px">{data.description}</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href={data.url} target="_blank">Click here to read more ....</a> 
-                    </td>
-                </tr>
-            </tbody>
+            <tr>
+                <td style="width:400px;">
+                    <img style="height:200px; width: 400px;" src={data.urlToImage} />
+                </td>
+                <td style="padding-left: 10px;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p style="font-size: 16px; padding-bottom: 10px;">{data.title}</p>
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <td>
+                                    <p><em>{data.author}</em></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <em><lightning-formatted-date-time value={data.publishedAt} year= "numeric"  month="short" day="2-digit" weekday="short" hour="numeric" minute="2-digit" hour12="false"></lightning-formatted-date-time></em>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <p style="line-height: 1.5; padding-top:10px">{data.description}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href={data.url} target="_blank">Click here to read more ....</a> 
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
         </table>
+        
             
     </div>
   </template>
